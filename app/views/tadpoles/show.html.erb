@@ -18,9 +18,11 @@
 </div>
 
 
-<%= form_for @frog, url: "/tadpoles/#{@tadpole.id}/metamorphose " do |f| %>
-  <%= f.hidden_field :name, :value => @tadpole.name  %>
-  <%= f.hidden_field :color, :value => @tadpole.color  %>
-  <%= f.hidden_field :pond_id, :value => @tadpole.pond.id %>
-  <%= f.submit "Become a Frog" %>
-<% end %>
+<%# form_for @frog, url: "/tadpoles/#{@tadpole.id}/metamorphose" do |f| %>
+  <%# f.hidden_field :name, :value => @tadpole.name  %>
+  <%# f.hidden_field :color, :value => @tadpole.color  %>
+  <%# f.hidden_field :pond_id, :value => @tadpole.pond.id %>
+  <%# f.submit "Become a Frog" %>
+<%# end %>
+
+<%= button_to "Become a frog", "/tadpoles/#{@tadpole.id}/metamorphose", method: :post %>

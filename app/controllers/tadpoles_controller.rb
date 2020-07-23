@@ -6,9 +6,13 @@ class TadpolesController < ApplicationController
     # redirect to frog showpage
     # save new frog instance/persist
     # delete tadpole
-    @frog = Frog.create(params)
-    byebug
-   
+    
+    @frog = @tadpole.become_a_frog
+    @tadpole.destroy
+    # redirect_to "/frogs/#{@frog.id}"
+    redirect_to frog_path(@frog)
+    # redirect_to @frog
+
   end
 
   def index
