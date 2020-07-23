@@ -16,3 +16,11 @@
 <div class="card">
   <img src="http://<%= @tadpole.color %>-tadpole.jpg.to/" alt="Tadpole Picture" width="300">
 </div>
+
+
+<%= form_for @frog, url: "/tadpoles/#{@tadpole.id}/metamorphose " do |f| %>
+  <%= f.hidden_field :name, :value => @tadpole.name  %>
+  <%= f.hidden_field :color, :value => @tadpole.color  %>
+  <%= f.hidden_field :pond_id, :value => @tadpole.pond.id %>
+  <%= f.submit "Become a Frog" %>
+<% end %>
